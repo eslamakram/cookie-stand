@@ -1,0 +1,33 @@
+
+body{
+    margin: 50px;
+    color:  rgba(59, 15, 219, 0.966);
+    background-color:  Bisque;
+    font-weight: bold;
+    font-size: 24px;
+    font-style: oblique;
+}
+
+img{
+    border-image: fill;
+    margin-top: 25px;
+    }
+    
+ nav {
+        float: right;
+         margin-right: 1px;
+         font-size: 24px;
+         font-style: oblique;
+          font-weight: bold;
+          color:royalblue ;
+         
+      }
+      header ul li{
+        display: inline-block;
+  
+      }
+  
+  a {
+    text-decoration: none;
+    
+  }
