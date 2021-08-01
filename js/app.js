@@ -30,7 +30,40 @@ const Paris ={
     locationName : 'Paris Location',
     MinPerCust : 20,
     MaxPerCust : 38,
-    AvgCookiePerSale : 2.3
+    AvgCookiePerSale : 2.3 ,
+    NoOfCustomersPerHour : new Array(13) ,
+    hours : ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'],
+    AvgCookiesPerHour : new Array(13),
+    Total : 0,
+   getNoOfCustomer: function() {
+       let FinalResult = 0;
+        for (let i=0 ; i < this.hours.length ; i++){
+        this.NoOfCustomersPerHour [i] = Math.floor(Math.random() * (this.MaxPerCust - this.MinPerCust + 1) + this.MinPerCust);
+        this.AvgCookiesPerHour [i] = this.NoOfCustomersPerHour[i] * this.AvgCookiePerSale;
+        FinalResult =  FinalResult + this.AvgCookiesPerHour [i];
+                }
+                this.Total = FinalResult;    
+    },          
+   render: function () {
+
+    let locationSales = document.getElementById('locationSales');
+
+    let articleElement = document.createElement('article');
+    locationSales.appendChild(articleElement);
+    
+    
+    let h2Element = document.createElement('h2');
+    h2Element.textContent= this.locationName;
+    articleElement.appendChild(h2Element);
+
+    let ulElement = document.createElement('ul');
+    for (let x=0; x < 14; x++){
+        let liElement = document.createElement('li');
+        liElement.textContent= this.hours[x] + this.AvgCookiesPerHour[x] + 'Cookies';
+        ulElement.appendChild(liElement);
+        console.log(liElement);
+    }
+}
 };
 
 const Lima = {
