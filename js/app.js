@@ -17,6 +17,45 @@ const Tokyo ={
     MinPerCust : 3,
     MaxPerCust : 24,
     AvgCookiePerSale : 1.2,
+    NoOfCustomersPerHour : new Array(13) ,
+    hours : ['6 AM: ','7 AM: ','8 AM: ','9 AM: ','10 AM: ','11 AM: ','12 PM: ','1 PM: ','2 PM: ','3 PM: ','4 PM: ','5 PM: ','6 PM: ','7 PM: '],
+    AvgCookiesPerHour : new Array(13),
+    Total : 0,
+   getNoOfCustomer: function() {
+       let FinalResult = 0;
+        for (let i=0 ; i < this.hours.length ; i++){
+        this.NoOfCustomersPerHour [i] = Math.floor(Math.random() * (this.MaxPerCust - this.MinPerCust + 1) + this.MinPerCust);
+        this.AvgCookiesPerHour [i] = Math.floor(this.NoOfCustomersPerHour[i] * this.AvgCookiePerSale);
+        FinalResult =  FinalResult + this.AvgCookiesPerHour [i];
+                }
+                this.Total = FinalResult;    
+    },          
+   render: function () {
+
+    let tokyoSale = document.getElementById('locationSales');
+
+    let articleElement = document.createElement('article');
+    tokyoSale.appendChild(articleElement);
+    
+    
+    let h2Element = document.createElement('h2');
+    h2Element.textContent= this.locationName;
+    articleElement.appendChild(h2Element);
+
+    let ulElement = document.createElement('ul');
+    articleElement.appendChild(ulElement);
+
+    for (let x=0; x < 14; x++){
+        let liElement = document.createElement('li');
+        liElement.textContent = this.hours[x] + this.AvgCookiesPerHour[x]  + ' Cookies';
+        ulElement.appendChild(liElement);
+        console.log(liElement);
+           }
+    
+    let pElement = document.createElement('p');
+    pElement.textContent = 'The Total :' + this.Total;
+    articleElement.appendChild(pElement);
+        }
     
 };
 
@@ -40,10 +79,10 @@ const Dubai ={
     },          
    render: function () {
 
-    let DubaiSale = document.getElementById('locationSales');
+    let dubaiSale = document.getElementById('locationSales');
 
     let articleElement = document.createElement('article');
-    DubaiSale.appendChild(articleElement);
+    dubaiSale.appendChild(articleElement);
     
     
     let h2Element = document.createElement('h2');
@@ -161,11 +200,15 @@ const Lima = {
 };
 
 
+// TOKYO LOC
+Tokyo.getNoOfCustomer();
+Tokyo.render();
+
 
 // DUBAI LOC
 //console.log(Dubai);
 Dubai.getNoOfCustomer();
-Dubai.render;
+Dubai.render();
 
 /*// PARIS LOC
 console.log(Paris);
