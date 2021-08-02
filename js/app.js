@@ -1,3 +1,9 @@
+
+
+let sales = document.getElementById('Sales');
+let tableEle = document.createElement('table');
+    sales.appendChild(tableEle);
+
 // single constructor
    function locationSales( locationName, MinPerCust, MaxPerCust, AvgCookiePerSale ){
 this.locationName = locationName;
@@ -26,34 +32,79 @@ locationSales.prototype.getNoOfCustomer = function(){
 } // end of prototype of getNoofCustomer()
 
 
+
+
 locationSales.prototype.render = function(){
-
-    let limaSale = document.getElementById('locationSales');
-
-    let articleElement = document.createElement('article');
-    limaSale.appendChild(articleElement);
     
     
-    let h2Element = document.createElement('h2');
-    h2Element.textContent= this.locationName;
-    articleElement.appendChild(h2Element);
+   // tableEle.setAttribute("border", "2");
 
-    let ulElement = document.createElement('ul');
-    articleElement.appendChild(ulElement);
-
-    for (let x=0; x < 14; x++){
-        let liElement = document.createElement('li');
-        liElement.textContent = this.hours[x] + this.AvgCookiesPerHour[x]  + ' Cookies';
-        ulElement.appendChild(liElement);
-       // console.log(liElement);
-           }
+   headerRow();
+   //DataRows();
+   //FooterRow();
+     
     
-    let pElement = document.createElement('p');
-    pElement.textContent = 'The Total :' + this.Total;
-    articleElement.appendChild(pElement);
+    
+    
+       function DataRows(){
 
-} // end of prototype of render
 
+        let tMainData = document.createElement('tbody');
+         let tDataRow = document.createElement('tr');
+         tableEle.appendChild(tMainData);
+         tMainData.appendChild(tDataRow);
+
+         for (let x=0; x < this.AvgCookiesPerHour.length; x++){
+            let tData = document.createElement('td');
+            tData.textContent[x] = this.AvgCookiesPerHour[x] ;
+            tDataRow.appendChild(tData);
+                           }
+
+               }
+
+       function FooterRow(){
+
+        let tMainFooter = document.createElement('tfoot')   
+        let tFooterRow = document.createElement('tr');
+        tableEle.appendChild(tMainFooter);
+        tMainFooter.appendChild(tFooterRow);
+
+      
+        for (let x=0; x < 14; x++){
+            let tFooter = document.createElement('td');
+            tFooter.textContent = this.hours ;
+            tFooterRow.appendChild(tFooter);
+            console.log(tHeaderRow);
+               }
+
+
+       }
+    
+    
+    
+    }
+    
+     
+    function headerRow(){
+
+        let tMainHeader = document.createElement('thead');
+        let tHeaderRow = document.createElement('tr');
+        tableEle.appendChild(tMainHeader);
+        tMainHeader.appendChild(tHeaderRow);
+
+        for (let x=0; x < 14; x++){
+            let theader = document.createElement('th');
+            theader.textContent = this.hours[x] ;
+            tHeaderRow.appendChild(theader);
+              }
+
+        let cellTotal = document.createElement('td');
+        cellTotal.textContent = locationSales.Total;
+        tHeaderRow.appendChild(cellTotal);
+        console.log(tHeaderRow);
+    }
+
+    
 
 // defined the const proporties
 
