@@ -1,7 +1,7 @@
 
 let shop = document.getElementById('locationSales');
 let headerData = ['6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM'];
-
+let all = [];
 // single constructor
    function locationSales( locationName, MinPerCust, MaxPerCust, AvgCookiePerSale ){
 this.locationName = locationName;
@@ -14,6 +14,7 @@ this.hours = ['6:00 AM: ','7:00 AM: ','8:00 AM: ','9:00 AM: ','10:00 AM: ','11:0
 this.Total= 0;
 this.NoOfCustomersPerHour = new Array(13);
 this.AvgCookiesPerHour = new Array(13);
+all.push(this);
 
 } //end of const
 
@@ -72,10 +73,11 @@ tableHeader();
 for(let i = 0; i < arr.length; i++) {
   arr[i].getNoOfCustomer();
   arr[i].render();
-    console.log(arr[i]);
-}
+    }
 
+console.log(all[0].AvgCookiesPerHour);
 
+//tableFooter();
 
 
 function tableHeader(){
@@ -94,3 +96,27 @@ headerData.push('Daily Total');
 headerData.shift();
 headerData.pop();
 }
+
+function tableFooter(){
+
+    let HourlyTotal =0;
+    let TotalofTotal =0;
+    let footerRow = document.createElement('tr');
+    shop.appendChild(footerRow);
+
+    for(let i=0; i < headerData.length;i++){
+
+            for(let j=0; j < all.length; j++){
+                let fData = document.createElement('td');
+                array.push
+            HourlyTotal[i] += all[2].AvgCookiesPerHour;
+            fData.textContent = HourlyTotal[i];
+            footerRow.appendChild(fData);
+          
+       }
+
+    
+       }
+
+    }
+
