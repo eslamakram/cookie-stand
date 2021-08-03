@@ -1,3 +1,7 @@
+
+let shop = document.getElementById('locationSales');
+let headerData = ['6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM'];
+
 // single constructor
    function locationSales( locationName, MinPerCust, MaxPerCust, AvgCookiePerSale ){
 this.locationName = locationName;
@@ -27,8 +31,6 @@ locationSales.prototype.getNoOfCustomer = function(){
 
 
 locationSales.prototype.render = function(){
-
-    let shop = document.getElementById('locationSales');
 
     let tableRow = document.createElement('tr');
     shop.appendChild(tableRow);
@@ -65,11 +67,30 @@ let Lima = new locationSales('Lima ', 2, 16, 4.6);
 
 let arr = [Seattle, Tokyo, Dubai, Paris, Lima];
 
+tableHeader();
+
 for(let i = 0; i < arr.length; i++) {
   arr[i].getNoOfCustomer();
   arr[i].render();
-  console.log(arr[i]);
+    console.log(arr[i]);
 }
 
 
 
+
+function tableHeader(){
+
+    let headerRow = document.createElement('tr');
+    shop.appendChild(headerRow);
+
+headerData.unshift(' ');
+headerData.push('Daily Total');
+    for  (let i=0; i < headerData.length; i++){
+
+        let hData = document.createElement('td');
+            hData.textContent = headerData[i];
+            headerRow.appendChild(hData);
+                }
+headerData.shift();
+headerData.pop();
+}
