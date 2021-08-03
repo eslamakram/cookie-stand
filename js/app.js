@@ -1,7 +1,7 @@
 
 let shop = document.getElementById('locationSales');
 let headerData = ['6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM'];
-
+let all = [];
 // single constructor
    function locationSales( locationName, MinPerCust, MaxPerCust, AvgCookiePerSale ){
 this.locationName = locationName;
@@ -14,6 +14,8 @@ this.hours = ['6:00 AM: ','7:00 AM: ','8:00 AM: ','9:00 AM: ','10:00 AM: ','11:0
 this.Total= 0;
 this.NoOfCustomersPerHour = new Array(13);
 this.AvgCookiesPerHour = new Array(13);
+//CookiesArray = [];
+all.push(this);
 
 } //end of const
 
@@ -23,6 +25,7 @@ locationSales.prototype.getNoOfCustomer = function(){
        for (let i=0 ; i < this.hours.length ; i++){
     this.NoOfCustomersPerHour [i] = Math.floor(Math.random() * (this.MaxPerCust - this.MinPerCust + 1) + this.MinPerCust);
     this.AvgCookiesPerHour [i] = Math.floor( this.NoOfCustomersPerHour[i] * this.AvgCookiePerSale);
+    //this.CookiesArray.push(this.AvgCookiesPerHour [i]);
     FinalResult =  FinalResult + this.AvgCookiesPerHour [i];
             }
             this.Total = FinalResult; 
@@ -72,10 +75,9 @@ tableHeader();
 for(let i = 0; i < arr.length; i++) {
   arr[i].getNoOfCustomer();
   arr[i].render();
-    console.log(arr[i]);
-}
+    }
 
-
+tableFooter();
 
 
 function tableHeader(){
@@ -94,3 +96,35 @@ headerData.push('Daily Total');
 headerData.shift();
 headerData.pop();
 }
+
+function tableFooter(){
+
+    let HourlyTotal =0;
+    let TotalofTotal =0;
+
+    let footerRow = document.createElement('tr');
+    shop.appendChild(footerRow);
+
+    let HData = document.createElement('th');
+            HData.textContent = 'Total';
+            footerRow.appendChild(HData);
+
+    for(let i=0; i < headerData.length;i++){
+
+            for(let j=0; j < all.length; j++){
+                HourlyTotal += all[j].AvgCookiesPerHour[i];
+                      
+                     }
+                     console.log(HourlyTotal);
+            let fData = document.createElement('th');
+            fData.textContent = HourlyTotal;
+            footerRow.appendChild(fData);      
+           }
+           for(let x=0; x < all.length; x++){
+            TotalofTotal += all[x].Total;   
+                       }
+            let TData = document.createElement('th');
+            TData.textContent = TotalofTotal;
+            footerRow.appendChild(TData);
+    }
+
