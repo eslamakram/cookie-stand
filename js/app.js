@@ -28,29 +28,25 @@ locationSales.prototype.getNoOfCustomer = function(){
 
 locationSales.prototype.render = function(){
 
-    let limaSale = document.getElementById('locationSales');
+    let shop = document.getElementById('locationSales');
 
-    let articleElement = document.createElement('article');
-    limaSale.appendChild(articleElement);
+    let tableRow = document.createElement('tr');
+    shop.appendChild(tableRow);
     
     
-    let h2Element = document.createElement('h2');
-    h2Element.textContent= this.locationName;
-    articleElement.appendChild(h2Element);
+    let tableHeadRow = document.createElement('th');
+    tableHeadRow.textContent= this.locationName;
+    tableRow.appendChild(tableHeadRow);
 
-    let ulElement = document.createElement('ul');
-    articleElement.appendChild(ulElement);
-
-    for (let x=0; x < 14; x++){
-        let liElement = document.createElement('li');
-        liElement.textContent = this.hours[x] + this.AvgCookiesPerHour[x]  + ' Cookies';
-        ulElement.appendChild(liElement);
-       // console.log(liElement);
+        for (let x=0; x < 14; x++){
+        let dataRow = document.createElement('td');
+        dataRow.textContent = this.AvgCookiesPerHour[x] ;
+        tableRow.appendChild(dataRow);
            }
     
-    let pElement = document.createElement('p');
-    pElement.textContent = 'The Total :' + this.Total;
-    articleElement.appendChild(pElement);
+    let totalDailyCell = document.createElement('td');
+    totalDailyCell.textContent =  this.Total;
+    tableRow.appendChild(totalDailyCell);
 
 } // end of prototype of render
 
@@ -59,11 +55,11 @@ locationSales.prototype.render = function(){
 
 //object for each Location 
 
-let Seattle = new locationSales('Seattle Location', 23, 65, 6.3);
-let Tokyo = new locationSales('Tokyo Location', 3, 24, 1.2);
-let Dubai = new locationSales('Dubai Location', 11, 38, 3.7);
-let Paris = new locationSales('Paris Location', 20, 38, 2.3);
-let Lima = new locationSales('Lima Location', 2, 16, 4.6);
+let Seattle = new locationSales('Seattle ', 23, 65, 6.3);
+let Tokyo = new locationSales('Tokyo ', 3, 24, 1.2);
+let Dubai = new locationSales('Dubai ', 11, 38, 3.7);
+let Paris = new locationSales('Paris ', 20, 38, 2.3);
+let Lima = new locationSales('Lima ', 2, 16, 4.6);
  
 // invoke it 
 

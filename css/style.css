@@ -31,3 +31,19 @@ img{
     text-decoration: none;
     
   }
+
+  
+  
+
+  
+  
+  table, th, td {
+    border: 1px solid rgb(230, 216, 25);
+    height: 40px ; 
+    width: 40px;
+    padding: 15px;
+    text-align: left;
+    color: teal;
+    background-color: thistle;
+    
+  }
