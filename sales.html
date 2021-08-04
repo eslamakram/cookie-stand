@@ -20,8 +20,27 @@
     <img src="./img/salmonLogo.png" alt="SalmonPic" id="SalmonPic" class="header-logo">
   </header>
     <main>
+      <fieldset>
+        <legend>Add New location :</legend>
+        <form id="locForm">
+          <label for="locName">Location Name</label>
+          <input type="text" name="" id="locName">
+  
+          <label for="minperCust">Min / Cust</label>
+          <input type="text" name="" id="minperCust">
+  
+          <label for="maxperCust">Max / Cust	</label>
+          <input type="text" name="" id="maxperCust">
+  
+          <label for="avgCookieperSale2">Avg Cookie / Sale	</label>
+          <input type="text" name="" id="avgCookieperSale2">
+
+            <input type="submit" value="Save">
+        </form> 
+      </fieldset>
+
       <div class="salesMain">
-      <h2> The Number of Pat’s Salmon Cookies in each location:</h2>
+      <h2 class="salesheading2"> The Number of Pat’s Salmon Cookies in each location:</h2>
       <table id="locationSales">
         <!-- DOM -->
       </table>
