@@ -185,10 +185,58 @@ header nav a:hover {
   padding: 5px;
 }
 
+#locForm{
+  display: block;
+  font-family: monospace; 
+  font-weight: small;
+  font-style: oblique;
+  font-size: 20px;
+  width: 100px;
+  height: 80px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 2px groove (internal value);
+}
+
+form label {
+  display: inline;
+  font-family: monospace; 
+  font-weight: small;
+  font-style: oblique;
+  font-size: 20px;
+}
+
+input.submit:hover {
+  background-color: #665544;
+}
+
+input.submit:active {
+  background-color: chocolate;
+}
+
 
 .salesMain {
   width: auto;
   height: auto;
+}
+
+.salesheading2{
+  margin-top: 2px;
+  margin-bottom: 20px;
+  margin-left: 250px;
+  margin-right: 160px;
+     padding: 20px;
+    text-align: center;
+    color: rgb(151, 10, 64);
+    background-color: rgb(216, 164, 122);
+    font: 1em sans-serif;
+    font-size: 20px;
+
+
 }
   
   table, th, td {
@@ -202,6 +250,15 @@ header nav a:hover {
     font: 1em sans-serif;
     font-size: small;
     column-rule-style: dotted;
+    margin-top: 2px;
+    margin-bottom: 80px;
+    margin-left: 250px;
+    margin-right: 20px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
     
   }
 
