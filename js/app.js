@@ -21,9 +21,7 @@ function locationSales(locationName, minCust, maxCust, avgCookie) {
 
 locationSales.prototype.getCustomers = function () {
 
-    let y = Math.random() * ((this.maxCust - this.minCust + 1) + this.minCust);
-    let x = Math.floor(y);
-    this.cookies.push(x);
+    this.cookies.push(Math.floor(Math.random() * ((this.maxCust - this.minCust + 1) + this.minCust)));
     this.cookies = Math.floor(this.cookies * this.avgCookie);
     this.total = this.total + this.cookies;
     return this.cookies;
