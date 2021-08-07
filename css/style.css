@@ -2,7 +2,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif; }
 
 
-
 body{
     margin: auto;
     background-color:  #fafbfc; ;
@@ -43,7 +42,6 @@ header {
  
  }
 
-
  header .profile #profileImg {
   margin: 15px auto;
   display: block;
@@ -60,7 +58,6 @@ header {
   width: 170px;
   height: 80px;
 }
-
 
 .socialLinks img{
 
@@ -119,7 +116,6 @@ header .profile .socialLinks a:hover {
   text-decoration: none;
 }
 
-
 header nav {
   text-align: right;
 }
@@ -153,7 +149,6 @@ margin-bottom: 70px;
  }
 
 
-
 .navMenu * {
   margin: 0;
   padding: 0;
@@ -185,7 +180,6 @@ margin-bottom: 70px;
 
 
 
-
 .locList {
   list-style-type:circle;
   word-spacing: 2%;
@@ -195,7 +189,8 @@ margin-bottom: 70px;
   align-items: center;
   width: 200px;
   height: 120px;
-  margin-left: 30px;
+  margin-left: 20px;
+  transform: rotate(50deg);
 
 }
 
@@ -210,7 +205,6 @@ width: 100%;
 margin-left: 301px;
 margin-right: 0px;
 }
-
 
 .familySection {
 
@@ -230,7 +224,6 @@ position: sticky;
     overflow-y: auto;
     }
 
-
 .familyPic {
   width: 600px;
   height: 550px;
@@ -242,19 +235,17 @@ position: sticky;
   display:block;
 }
 
+.shopPage{
 
-.shopsSection {
-
-  display: grid;
-   grid-template-columns: auto auto ;
-  gap: 10px;
-   border-top: 1px ;
-  border-bottom: 1px ;
-  height: 200px;
-  width: 100%;
- 
-
-  background-color: rgba(153, 74, 43, 0.733);
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+margin-top: 0px;
+margin-bottom: 0px;
+height: 700px;
+width: 950px;
+margin-left: 301px;
+margin-right: 0px;
 
 }
 
@@ -262,9 +253,8 @@ position: sticky;
 .shirtPic {
   width: 100px;
   height: 120px;
-
-
-}
+  margin-top: 30px;
+border: 1px solid ;}
 
 .cookiesSection {
 
@@ -272,12 +262,10 @@ position: sticky;
   grid-template-rows:  auto auto auto ;
   width: 100%;
   height: 200px;
-  text-align: left;
-    margin-left: 20px;
+  margin-left: 301px;
   margin-bottom: 5px;
   margin-top: 5px;
   padding: 5px;
-
 
 }
 
@@ -287,13 +275,16 @@ position: sticky;
   grid-template-columns:  auto auto ;
   width: 50%;
   height: 120px;
-;
+margin-left: 80px;
 
 }
 
 .cookieSecImg {
   width: 100px;
   height: 120px;
+  margin-top: 20px;
+transform: rotate(5deg);
+border: 1px  teal;
 
 }
 
@@ -303,15 +294,14 @@ position: sticky;
   grid-template-rows:  20px 120px 60px;
   width: 100%;
   height: 200px;
+  margin-top: 80px;
  
   text-align:center;
   
   margin-right: 20px;
   margin-bottom: 5px;
-  margin-top: 5px;
   padding: 5px;
 }
-
 
   footer {
     margin-top: 150px;
@@ -416,7 +406,6 @@ padding: 1px;
 
 
 
-
 #mainSec{
   margin-left: 305px;
   position: relative;
@@ -459,7 +448,6 @@ padding: 1px;
   margin-left: 150px;
 }
 
-
 .locForm{
   font-family: monospace; 
   font-weight: small;
@@ -495,7 +483,6 @@ padding: 1px;
     width: 100px;
   height: 25px;
 
-
 }
 
 form label {
@@ -518,7 +505,6 @@ input.submit:active {
 
 
 
-
 .salesheading2{
   margin-top: 2px;
   margin-bottom: 20px;
@@ -530,7 +516,6 @@ input.submit:active {
     background-color: rgb(230, 106, 5);
     font: 1em sans-serif;
     font-size: 20px;
-
 
 }
   
@@ -555,3 +540,4 @@ input.submit:active {
 
     
   }
+
