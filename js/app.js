@@ -147,7 +147,6 @@ function submitHandler(event) {
     let newShop = new cookiesShop(shopName, minCust, maxCust, avgCust);
 
     shopTable.deleteRow(-1);
-    //newShop.getRndCustomers();
     newShop.render();
         footerTable();
 
