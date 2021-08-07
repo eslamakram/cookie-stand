@@ -26,7 +26,6 @@ cookiesShop.prototype.getRndCustomers = function () {
 
     let rndCust = Math.floor(Math.random() * ((this.maxCust - this.minCust + 1) + this.minCust));
     this.cookie = Math.floor(rndCust * this.avgCust);
-    //this.dailyTotal = this.dailyTotal + this.cookie;
     this.cookies.push(this.cookie);
     return this.cookie;
 
@@ -88,16 +87,20 @@ function footerTable() {
     footerRow.appendChild(footerHead);
     footerHead.textContent = 'Total';
 
+  
+
     for (let i = 0; i < hours.length; i++) {
         let hourlyTotal = 0;
 
         for (let j = 0; j < shops.length; j++) {
-            hourlyTotal += shops[j].cookies[i ];
+            hourlyTotal += shops[j].cookies[i];
         }
         let footerData = document.createElement('th');
         footerRow.appendChild(footerData);
         footerData.textContent = hourlyTotal;
     }
+
+     hourlyTotal =0;
 
     let totalOfTotal = 0;
     for (let k = 0; k < shops.length; k++) {
@@ -127,6 +130,8 @@ for (let i = 0; i < shops.length; i++) {
     shops[i].render();
 }
 
+console.log(shops)
+
 footerTable();
 
 
@@ -142,9 +147,9 @@ function submitHandler(event) {
     let newShop = new cookiesShop(shopName, minCust, maxCust, avgCust);
 
     shopTable.deleteRow(-1);
-    newShop.getRndCustomers();
+    //newShop.getRndCustomers();
     newShop.render();
-    footerTable();
+        footerTable();
 
 }
 
