@@ -11,44 +11,74 @@
 </head>
 
 <body>
-    <header>
-    <h1>Welcome to Salmon's Cookies </h1> 
-    <nav>
-      <a href="./index.html">Home</a>
-      <a href="./sales.html">Sales</a>
+  <header>
+    <div class="profile">
+      <img src="./img/profileImg.png" id="profileImg" srcset="">
+      <h1>Pat's Cookies </h1>
+      <div class="socialLinks">
+        <a href=""><img src="./img/fb.png" alt="" srcset=""></a>
+        <a href=""><img src="./img/twt.png" alt="" srcset=""></a>
+        <a href=""><img src="./img/whts.png" alt="" srcset=""></a>
+      </div>
+    </div>
+    <nav class="navMenu">
+      <ul>
+        <li><img src="./img/homeIcon.png" alt=""><a href="./index.html">Home</a></li>
+        <li><img src="./img/locIcon.png" alt="" srcset=""><a href="./locations.html">Locations</a></li>
+        <li><img src="./img/sales.png" alt=""><a href="./sales.html">Sales</a></li>
+        <li><img src="./img/contacIcon.png" alt="" srcset=""><a href="./contact.html">Contact</a></li>
+        <li><img src="./img/shop.png" alt=""><a href="./shop.html">Shop</a></li>
+      </ul>
     </nav>
-    <img src="./img/salmonLogo.png" alt="SalmonPic" id="SalmonPic" class="header-logo">
+    <div class="header-logo">
+      <img src="./img/salmonLogo.png" alt="SalmonPic" id="SalmonPic">
+    </div>
   </header>
-    <main>
+  <main id="mainSec" style="background-image: url('./img/woodly-background1.jpg');">
+
+    <section class="salesPage">
+      <section class="newlocSec">
       <fieldset>
         <legend>Add New location :</legend>
-        <form id="locForm">
-          <label for="locName">Location Name</label>
-          <input type="text" name="" id="locName">
-  
-          <label for="minperCust">Min / Cust</label>
-          <input type="text" name="" id="minCust">
-  
-          <label for="maxperCust">Max / Cust	</label>
-          <input type="text" name="" id="maxCust">
-  
-          <label for="avgCust">Avg Cookie / Sale	</label>
-          <input type="text" name="" id="avgCust">
+        <form class="locForm" id="locForm">
+          <label for="locName">Location Name : </label>
+          <input type="text" name="" id="locName" style="background-image: url('./img/inputbg.jpg'); width: 100px;height: 25px;">
+          <br>
 
-          <input type="submit" value="Save">
-        </form> 
+          <label for="minperCust">Min / Cust : </label>
+          <input type="text" name="" id="minCust" class="inputForm" style="background-image: url('./img/inputbg.jpg')">
+          <br>
+
+          <label for="maxperCust">Max / Cust : </label>
+          <input type="text" name="" id="maxCust" class="inputForm" style="background-image: url('./img/inputbg.jpg')">
+          <br>
+          
+          <label for="avgCust">Avg Cookie / Sale : </label>
+          <input type="text" name="" id="avgCust" class="inputForm" style="background-image: url('./img/inputbg.jpg')">
+          <br>
+
+          <input type="submit" value="Save" style="height: 40px; width: 80px; color:  rgb(65, 63, 63);
+          background-color: rgb(230, 106, 5); font-size: 20px; margin-left: 150px; margin-top: 20px;">
+          <br>
+        </form>
       </fieldset>
+    </section>
 
-      <div class="salesMain">
-      <h2 class="salesheading2"> The Number of Pat’s Salmon Cookies in each location:</h2>
-      <table id="infoSales">
-        <!-- DOM -->
-      </table>
-    </div>
-    </main>
-    <footer>
-      all right reserved &copy;2021
-    </footer>
-    <script src="js/app.js"></script>
-  </body>
+    <section class="salesMain">
+        <h2 class="salesheading2"> The Number of Pat’s Salmon Cookies in each location:</h2>
+        <table id="infoSales">
+          <!-- DOM -->
+        </table>
+    </section>
+
+    </section>
+
+
+  </main>
+  <footer>
+    &copy;2021 Pat's Shop. All rights reserved.
+  </footer>
+  <script src="./js/app.js"></script>
+</body>
+
 </html>
